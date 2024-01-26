@@ -1,0 +1,103 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center; /* Centra el texto del título */
+    margin-bottom: 20px; /* Agrega un espacio entre el título y el tablero */
+}
+
+#tablero {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para el tablero */
+#tablero {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Ajusta según el número de celdas por fila */
+    gap: 10px;
+    padding: 10px;
+    border: 3px solid #333;
+    background-color: #fff;
+}
+
+.celda {
+    width: 100%;
+    height: 150px; /* Altura de las celdas */
+    border: 2px dashed #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%); /* Inicia con imagen en escala de grises */
+    transition: filter 0.3s ease;
+    cursor: default; 
+}
+
+.celda.activo {
+    filter: grayscale(0%); /* Imagen a color cuando está activa */
+}
+
+/* Estilos para las imágenes específicas de cada celda */
+#celda1 {
+    background-image: url('img/Aguila.png');
+}
+
+#celda2 {
+    background-image: url('img/Caiman.png');
+}
+
+#celda3 {
+    background-image: url('img/Leon.png');
+}
+
+#celda4 {
+    background-image: url('img/2.png');
+}
+
+#celda5 {
+    background-image: url('img/6.png');
+}
+
+/* Estilos base para la ventana emergente */
+.ventana-emergente {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto; /* Ancho automático basado en el tamaño de la imagen */
+    height: auto; /* Altura automática basada en el tamaño de la imagen */
+    background: transparent; /* Fondo completamente transparente */
+    display: none;
+    z-index: 1000;
+    text-align: center; /* Alineación del texto e imágenes al centro */
+    padding: 20px; /* Espaciado interior */
+}
+
+/* Estilos para la imagen dentro de la ventana emergente */
+#imagen-ventana-emergente {
+    max-width: 80%; /* Máximo ancho de la imagen */
+    max-height: 80vh; /* Máximo altura de la imagen */
+    margin: auto; /* Centrar la imagen */
+}
+
+.ventana-emergente.activo {
+    display: block;
+}
